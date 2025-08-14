@@ -83,6 +83,12 @@ interface TableLayout {
 const AddTable = () => {
     const [step, setStep] = useState<"select" | "customize">("select");
     const [isOpen, setIsOpen] = useState(false)
+    const [selectedLayout, setSelectedLayout] = useState<TableLayout | null>(null);
+
+    const handleSelectedLayout = (layout: TableLayout) => {
+        setSelectedLayout(layout)
+        setStep("customize")
+    }
 
     const resetDialog = () => {
         setStep("select")
@@ -116,6 +122,7 @@ const AddTable = () => {
                                 {tableLayouts.map((layout) => (
                                     <Card
                                         key={layout.id}
+                                        onClick={() => handleSelectedLayout(layout)}
                                     >
                                         <CardHeader className="pb-3">
                                             <CardTitle className="text-lg">{layout.name}</CardTitle>
@@ -142,6 +149,12 @@ const AddTable = () => {
                                 ))}
                             </div>
                         </>
+                    )}
+
+                    {step === 'customize' && (
+                        <div>
+                            hello
+                        </div>
                     )}
 
                     <DialogFooter>
