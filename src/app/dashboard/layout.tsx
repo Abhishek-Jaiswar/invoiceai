@@ -18,12 +18,12 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
     <main className='relative h-screen flex'>
       {/* Desktop Sidebar */}
-      <section className='hidden md:block'>
+      <section className='hidden md:block border-r border-r-neutral-300'>
         <ControlSidebar controls={controls.filter(item => item.name.toLowerCase() !== 'preview')} />
       </section>
 
       {/* Main content */}
-      <section className='flex-1'>
+      <section className='flex-1 p-4 border-r '>
         {children}
       </section>
 

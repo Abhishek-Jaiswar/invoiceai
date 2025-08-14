@@ -41,7 +41,7 @@ export function DatePicker({ name }: { name: string }) {
   const [value, setValue] = React.useState(formatDate(date))
 
   return (
-    <div className="flex flex-col gap-3">
+    <div className="flex flex-col gap-2">
       <Label htmlFor="date" className="px-1">
         {name}
       </Label>
